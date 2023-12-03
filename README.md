@@ -1,6 +1,7 @@
 # Advent of Code 2023
 
-![Advent of Code Banner](link-to-banner-image)
+![image](https://github.com/abel-cosmic/AdventOfCode/assets/119308986/8704922f-be09-4019-a698-571bdb17b10e)
+
 
 Welcome to my Advent of Code 2023 repository! Here, you'll find my solutions to the daily programming puzzles provided by Advent of Code.
 
