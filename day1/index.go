@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 // learning go on the way
 /**
@@ -9,13 +14,27 @@ import "fmt"
  * @return
 **/
 func main() {
+	file, err := os.Open("day1puzzle1input.txt")
+	if err != nil {
+		fmt.Println("Error opening file:", err)
+		return
+	}
+	defer file.Close()
+	var lines []string
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+		lines = append(lines, line)
+		characters := strings.Split(line, "")
+		for i := range characters {
+			char := characters[i]
+			fmt.Println(char)
+		}
+		fmt.Println(characters)
 
-	type farehnheit int
-	type celsius int
+	}
+	if err := scanner.Err(); err != nil {
+		fmt.Println("Error reading file:", err)
+	}
 
-	var f farehnheit = 32
-	var c celsius = 0
-
-	c = celsius((f - 32) * 5 / 9)
-	fmt.Println(f, c)
 }
