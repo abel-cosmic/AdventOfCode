@@ -36,7 +36,7 @@ func main() {
 		m[word] = i + 1
 	}
 
-	file, err := os.Open("day1puzzle1input.txt")
+	file, err := os.Open("../day1puzzle1input.txt")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
