@@ -13,7 +13,6 @@ var results []int
 
 func separateNumbers(characters []string) []int {
 	var numbers []int
-
 	for _, char := range characters {
 		if unicode.IsDigit(rune(char[0])) {
 			num, err := strconv.Atoi(char)
@@ -24,18 +23,15 @@ func separateNumbers(characters []string) []int {
 	}
 	return numbers
 }
-
 func main() {
-	file, err := os.Open("day1puzzle1input.txt")
+	file, err := os.Open("../day1puzzle1input.txt")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
 	}
 	defer file.Close()
-
 	var lines []string
 	scanner := bufio.NewScanner(file)
-
 	for scanner.Scan() {
 		line := scanner.Text()
 		lines = append(lines, line)
@@ -53,13 +49,11 @@ func main() {
 			results = append(results, twoDigitNumber)
 		}
 	}
-
 	totalSum := 0
 	for _, result := range results {
 		totalSum += result
 	}
 	fmt.Println("Total Sum:", totalSum)
-
 	if err := scanner.Err(); err != nil {
 		fmt.Println("Error reading file:", err)
 	}
